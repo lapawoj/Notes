@@ -1,0 +1,15 @@
+
+git status // czy są pliki dodane, których nie ma w repo
+
+.gitignore // nie zwraca na pliki ustawien z haslami, pliki wynikowe np class   txt jako: .gitignore.
+
+git add . //dodaje wszystko do repo
+
+git commit -m "Komentarz" // wrzuca commita
+
+git log //historia commitów
+git log --oneline // id_rewizji komentarz
+
+git push //wrzuca repo lokane do zdalnego
+
+git checkout -b nazwagalezi // stworzenie nowej galezi

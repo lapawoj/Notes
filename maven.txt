@@ -1,0 +1,52 @@
+mvn archetype:generate -DgroupID=com.mycompany.app -DpackageId=2 -DartifactId=lekcja2 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+
+
+
+clean
+------
+pre-clean
+clean    // usuwa target
+post-clean
+
+default
+------
+validate    // sprawdza, czy wszystkie dane są poprawne (m.in pom)
+compile    //kompiluje kod
+test       //odpala testy 
+package   //buduje paczke
+install    // wykonuje plik uruchomieniowy 
+deploy -- paczka z katalogu target idzie na serwer
+
+site
+------
+pre-site
+site   --generuje dokumentacje
+post-side
+site-deploy
+
+wyłączanie testów (kod testów musi się kompilować)
+mvn clean install -DskipTests
+
+Nie kompiluje kodu źródłowego testów:
+mvn clean install -DskipTests -Dmaven.test.skip=true
+
+Uruchomienie pojedynczej klasy/metody testowej
+mvn test -Dtest=AppTest(nazwa klasy AppTest)
+mvn test -Dtest=AppTest#testApp (nazwa metody testApp)
+
+
+Koniguracja odpalania testów po kategorii:
+
+<build>
+	<plugins>
+		<plugin>
+		   <artifactId>maven-surefire-plugin</artifactId>
+		   <configuration>
+				<groups> com.cybercode.mvn.categories.Important</groups>    Tutaj pełna ścieżka do kategorii Important
+				<paralell>methods lub class</parallel>   Uruchamianie testów współbieżnie skraca czas wykonania testów
+				<threadCount>10</threadCount> ile wątków na testy
+		</plugin>
+	</plugins>
+</build>	
