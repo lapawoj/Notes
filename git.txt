@@ -1,4 +1,4 @@
-
+﻿
 git status // czy są pliki dodane, których nie ma w repo
 
 .gitignore // nie zwraca na pliki ustawien z haslami, pliki wynikowe np class   txt jako: .gitignore.
@@ -13,3 +13,15 @@ git log --oneline // id_rewizji komentarz
 git push //wrzuca repo lokane do zdalnego
 
 git checkout -b nazwagalezi // stworzenie nowej galezi
+
+git rebase -i HEAD~x   //x- ilosc commitow, mergujemy commity
+
+git commit -m "nowa nazawa commita" --amend // zmiana komentarza w poprzeniej rewizji
+
+git chceckout master // przałączenie na gałąź master
+
+git marge nazwa/nazwa_galezi // merguje do mastera
+
+git branch -D nazwa/nazwa_galezi // usuwa galaz
+
+git branch -av // widać czy mamy mastera
